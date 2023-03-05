@@ -60,7 +60,7 @@ $image2 = "";
         clear:both;
         float: left;
         width: 100%;
-      
+
     }
     .colorwidget {
         display: inline-block;
@@ -222,7 +222,7 @@ $image2 = "";
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- HEADING -->
                         <div class="widget" >
                             <div class="heading"  >
@@ -234,7 +234,7 @@ $image2 = "";
                                 <label ng-repeat="(brand, price) in productResults.brandList" style='font-weight: 500;width: 100%;'>
                                     <input type="checkbox" name='pricerange[]' class='pricefilter' value='{{price}}'> {{brand}}
                                 </label>
-                                <button class="col-xs-3 btn btn-link padding5-10" style="   
+                                <button class="col-xs-3 btn btn-link padding5-10" style="
                                         margin-bottom: 20px;" ng-click="getProducts()" >FILTER</button> 
                             </div>
                         </div>
@@ -323,42 +323,42 @@ $image2 = "";
                                     switch ($custom_id) {
                                         case "1":
                                             $productimage1 = custome_image_server . "/shirt/output/{{product.folder}}/shirt_pos20001.png";
-                                            $productimage2 = custome_image_server . "/shirt/output/{{product.folder}}/shirt_model10001.png";
+                                            $productimage2 = base_url("assets/images/shirtblank.png");
                                             break;
 
                                         case "2":
                                             $productimage1 = custome_image_server . "/jacket/output/{{product.folder}}/fabric20001.png";
-                                            $productimage2 = custome_image_server . "/jacket/output/{{product.folder}}/style_buttons.png";
+                                            $productimage2 = base_url("assets/images/suit.png");
                                             break;
 
                                         case "5":
                                             $productimage1 = custome_image_server . "/jacket/output/{{product.folder}}/fabric20001.png";
-                                            $productimage2 = custome_image_server . "/jacket/output/{{product.folder}}/style_buttons.png";
+                                            $productimage2 = base_url("assets/images/suit.png");
                                             break;
 
                                         case "6":
                                             $productimage1 = custome_image_server . "/jacket/output/{{product.folder}}/fabric20001.png";
-                                            $productimage2 = custome_image_server . "/jacket/output/{{product.folder}}/style_buttons.png";
+                                            $productimage2 = base_url("assets/images/suit.png");
                                             break;
 
                                         case "7":
                                             $productimage1 = custome_image_server . "/jacket/output/{{product.folder}}/fabric20001.png";
-                                            $productimage2 = custome_image_server . "/jacket/output/{{product.folder}}/style_buttons.png";
+                                            $productimage2 = base_url("assets/images/suit.png");
                                             break;
 
                                         case "3":
                                             $productimage1 = custome_image_server . "/jacket/output/{{product.folder}}/fabric20001.png";
-                                            $productimage2 = custome_image_server . "/jacket/output/{{product.folder}}/fabricx0001.png";
+                                            $productimage2 = base_url("assets/images/suit.png");
                                             break;
 
                                         case "4":
                                             $productimage1 = custome_image_server . "/jacket/output/{{product.folder}}/fabric20001.png";
-                                            $productimage2 = custome_image_server . "/jacket/output/{{product.folder}}/style_buttons.png";
+                                            $productimage2 = base_url("assets/images/suit.png");
 
                                             break;
                                         default:
                                             $productimage1 = custome_image_server . "/jacket/output/{{product.folder}}/fabric20001.png";
-                                            $productimage2 = custome_image_server . "/jacket/output/{{product.folder}}/fabricx0001.png";
+                                            $productimage2 = base_url("assets/images/suit.png");
                                     }
                                     ?>
 
@@ -366,12 +366,12 @@ $image2 = "";
                                         <?php
                                         if ($custom_id == 5) {
                                             ?>
-                                            <img class="img-responsive" src="<?php echo $productimage1; ?>" style="background-image:url(<?php echo $productimage1; ?>);    background-size: contain;" alt="" /> 
+                                            <img class="img-responsive" src="<?php echo $productimage2; ?>" style="background-image:url(<?php echo $productimage1; ?>);    background-size: contain;" alt="" /> 
 
                                             <?php
                                         } else {
                                             ?>
-                                            <img class="img-responsive" src="<?php echo $productimage1; ?>" alt="" /> 
+                                            <img class="img-responsive" src="<?php echo $productimage2; ?>" style="background-image:url(<?php echo $productimage1; ?>);    background-size: contain;" alt="" /> 
 
                                             <?php
                                         }
@@ -380,7 +380,8 @@ $image2 = "";
                                         <div class="item-sale" ng-if="product.is_sale == 'true'" class="onsaletag">Sale</div> 
                                         <div class="item-sale" ng-if="product.is_populer == 'true'" class="onpopulertag">HOT</div> 
 
-                                        <div class="item-hover">
+                                        <div class="item-hover" style="text-align: center;
+    margin-top: 20px;">
                                             <div class=" btn-group">
                                                 <a class="btn btn-primary" href="<?php echo site_url("Product/customizationRedirect/") ?><?php echo $custom_id; ?>/{{product.product_id}}" title="Add to cart">Design Now</a> 
                                                 <button type="button" class="btn btn-primary" ng-click="askPriceSelection(product.product_id)" >Price Enq.
@@ -519,10 +520,10 @@ $image2 = "";
                                         </div>
                                         <br/>
                                         <input type="email" name="email" placeholder="Email*" class="form-control" required="">
- <br/>
+                                        <br/>
 
                                         <input type="tel" name="contact" placeholder="Contact No." class="form-control">
- <br/>
+                                        <br/>
 
                                         <button type="submit" name="priceenquiry" class="btn btn-danger">Submit</button>
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Add More</button>
