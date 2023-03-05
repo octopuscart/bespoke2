@@ -98,7 +98,7 @@
                                 ?>
                                 <tr>
                                     <td>
-                                        <img src="http://files.costcokart.com/royalfiles/coman/output/<?php echo $value->folder; ?>/cutting20001.png" alt="" style="width: 100px;" alt="..." />
+                                        <img src="http://files.bespoketailorhk.com/coman/output/<?php echo $value->folder; ?>/cutting20001.png" alt="" style="width: 100px;" alt="..." />
 
                                     </td>
                                     <td>

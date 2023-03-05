@@ -23,7 +23,7 @@ $this->load->view('layout/header');
                             <!-- POST -->
                             <div class="col-md-6">
                                 <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
-                                    <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
+                                    <p>Bespoke Tailors was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
                                     <a href="#." class="red-more">Read More</a> </article>
                             </div>
 
@@ -42,7 +42,7 @@ $this->load->view('layout/header');
                             <!-- POST -->
                             <div class="col-md-6">
                                 <article> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""> <span>By Admin</span> <span><?php echo date("d M, Y"); ?></span> <a href="#." class="news-tittle">J Winter Fashion Show 6th Feb 2018 atop Costa neoRomantica cruise</a>
-                                    <p>Royal Tailor was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
+                                    <p>Bespoke Tailors was invited to collaborate with the iconic J Winter Fashion Show atop Costa neoRomantica cruise ship produced by supermodel Jessica Minh Anh</p>
                                     <a href="#." class="red-more">Read More</a> </article>
                             </div>
 
@@ -99,15 +99,15 @@ $this->load->view('layout/header');
                             <ul class="papu-post margin-top-20">
                                 <li class="media">
                                     <div class="media-left"> <a href="#"> <img class="media-object" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""></a> </div>
-                                    <div class="media-body"> <a class="media-heading" href="#.">Royal Tailor was invited ..</a><span>By Admin</span> <span>Jul 18, 2015</span> </div>
+                                    <div class="media-body"> <a class="media-heading" href="#.">Bespoke Tailors was invited ..</a><span>By Admin</span> <span>Jul 18, 2015</span> </div>
                                 </li>
                                 <li class="media">
                                     <div class="media-left"> <a href="#"> <img class="media-object" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""></a> </div>
-                                    <div class="media-body"> <a class="media-heading" href="#."> Royal Tailor was invited ..</a><span>By Admin</span> <span>Jul 18, 2015</span> </div>
+                                    <div class="media-body"> <a class="media-heading" href="#."> Bespoke Tailors was invited ..</a><span>By Admin</span> <span>Jul 18, 2015</span> </div>
                                 </li>
                                 <li class="media">
                                     <div class="media-left"> <a href="#"> <img class="media-object" src="<?php echo base_url(); ?>assets/theme/images/blogimage1.jpg" alt=""></a> </div>
-                                    <div class="media-body"> <a class="media-heading" href="#.">Royal Tailor was invited ..</a> <span>By Admin</span> <span>11 may, 2018</span> </div>
+                                    <div class="media-body"> <a class="media-heading" href="#.">Bespoke Tailors was invited ..</a> <span>By Admin</span> <span>11 may, 2018</span> </div>
                                 </li>
                             </ul>
 

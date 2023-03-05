@@ -5,7 +5,7 @@ require("configdbconnect.php");
 $configuration = $globleConnectDB;
 
 $baselink = 'http://' . $_SERVER['SERVER_NAME'];
-$adminurl = "https://admin.royaltailor.hk/";
+$adminurl = "https://admin.bespoketailorhk.com/";
 $baselink = 'http://' . $_SERVER['SERVER_NAME'];
 switch ($baselink) {
     case "http://localhost":

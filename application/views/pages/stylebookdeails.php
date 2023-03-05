@@ -76,16 +76,16 @@ function truncate($str, $len) {
 
                     <div id="fb-root"></div>
                     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=224707228091621&autoLogAppEvents=1"></script>
-                    <div class="fb-share-button" data-href="<?php echo site_url('styleTips/' . $styleobj->id . "/" . $styleobj->title); ?>" data-layout="box_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(site_url('styleTips/' . $styleobj->id . "/royaltailor")); ?>;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+                    <div class="fb-share-button" data-href="<?php echo site_url('styleTips/' . $styleobj->id . "/" . $styleobj->title); ?>" data-layout="box_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(site_url('styleTips/' . $styleobj->id . "/BespokeTailors")); ?>;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
                     <!--likes-->
 
-                    <a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo urlencode(site_url('styleTips/' . $styleobj->id . "/royaltailor")); ?>" class="btn btn-default " style="    margin-top: -39px;    background: none;
+                    <a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo urlencode(site_url('styleTips/' . $styleobj->id . "/BespokeTailors")); ?>" class="btn btn-default " style="    margin-top: -39px;    background: none;
                        color: green;">
                         <i class="fa fa-whatsapp d_inline_m" style="font-size: 30px;"></i>
                     </a>
                     <!-- AddThis Button BEGIN -->
-                    <a target="_blank" href="http://twitter.com/intent/tweet?text=<?php echo urlencode(site_url('styleTips/' . $styleobj->id . "/royaltailor")); ?>" class="btn btn-default " style="    margin-top: -39px;  background: none;
+                    <a target="_blank" href="http://twitter.com/intent/tweet?text=<?php echo urlencode(site_url('styleTips/' . $styleobj->id . "/BespokeTailors")); ?>" class="btn btn-default " style="    margin-top: -39px;  background: none;
                        color: #007eff;">
                         <i class="fa fa-twitter d_inline_m" style="font-size: 30px;  "></i>
                     </a>
