@@ -2224,6 +2224,13 @@ class CustomApi extends REST_Controller {
                     "viewtype" => "front",
                     "type" => "submain",
                 ),
+                
+                 array(
+                    "title" => "Remark",
+                    "viewtype" => "front",
+                    "type" => "main",
+                  
+                ),
             ],
             "collar_cuff_insert" => array(),
             "data" => $this->suitCustomeElements()
@@ -2345,6 +2352,12 @@ class CustomApi extends REST_Controller {
                     "viewtype" => "pant",
                     "type" => "main",
                     "colrow" => "4",
+                ),
+                 array(
+                    "title" => "Remark",
+                    "viewtype" => "front",
+                    "type" => "main",
+                  
                 ),
             ],
             "collar_cuff_insert" => array(),
@@ -2590,6 +2603,13 @@ class CustomApi extends REST_Controller {
                     "type" => "main",
                     "colrow" => "4",
                     "style_side" => "    background-size: 100%!important;",
+                )
+                ,
+                 array(
+                    "title" => "Remark",
+                    "viewtype" => "front",
+                    "type" => "main",
+                  
                 ),
             ],
             "collar_cuff_insert" => array(),
@@ -2667,6 +2687,13 @@ class CustomApi extends REST_Controller {
                     "type" => "main",
                     "colrow" => "4",
                 ),
+                 array(
+                    "title" => "Remark",
+                    "viewtype" => "front",
+                    "type" => "main",
+                  
+                ),
+                
             ],
             "collar_cuff_insert" => array(),
             "data" => $this->suitCustomeElements(),
