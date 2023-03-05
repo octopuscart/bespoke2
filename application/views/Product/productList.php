@@ -77,7 +77,6 @@ $image2 = "";
     }
     .price_cut{
         text-decoration: line-through;
-        font-size: 15px;
 
         color: #0000006b;
     }
