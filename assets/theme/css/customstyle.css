@@ -386,3 +386,10 @@ body {
 .btn-small-sm{
       padding:5px 10px;
 }
+
+
+article.shop-artical2 {
+    margin-top: 25px;
+    border: 1px solid #ccc;
+    padding-bottom: 10px;
+}
