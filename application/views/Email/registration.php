@@ -64,7 +64,7 @@
           font-family: sans-serif;">
 
         <div class="" style="padding:50px 0px;    background: #ababab;">
-            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #fff; ;padding: 0 20px">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="700" style="background: #000; ;padding: 0 20px">
 
                 <tr>
                     <td >
