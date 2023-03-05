@@ -273,41 +273,7 @@
                 </tr>
 
                 <?php if ($order_data->payment_mode == 'Bank Transfer') { ?>
-                    <tr><td colspan="6" style="font-size: 12px;">
-                            <table class="bankdetails">
-                                <tbody>
-                                    <tr>
-                                        <th style="width: 120px;text-align: left" colspan="4">Company Name: Royal Trading</th>
-                                    </tr>
-                                    <tr>
-                                        <th>Bank Name</th>
-                                        <td>Bank Of China</td>
-                                        <th>A/c No.</th>
-                                        <td>012 721 00092404</td>
-                                    </tr>
-                                    <tr>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <th>Bank Code</th>
-                                        <td>012</td>
-                                         <th>Branch Code</th>
-                                        <td>721</td>
-                                    </tr>
-                                    <tr>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <th>Swift Code</th>
-                                        <td>BKCHHKHH</td>
-                                        <th>Address</th>
-                                        <td>1 Garden Road, Hong Kong</td>
-                                    </tr>
-                                  
-                                </tbody></table>
-                        </td>
 
-                    </tr>
                     <?php
                 }
                 ?>
