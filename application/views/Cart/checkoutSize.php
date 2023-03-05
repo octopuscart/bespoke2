@@ -301,11 +301,10 @@ $this->load->view('layout/header');
                                                     <b>Send to:</b>
                                                     <br/>
 
-                                                    Shop 11, 1/F Admiralty Center,<br/>
-                                                    18 Harcourt Road, Admiralty, Hong Kong
-                                                    <br/>
-                                                    <i class="fa fa-envelope"></i> sales@royaltailor.hk<br/>
-                                                    <i class="fa fa-phone"></i>  +(852) 2655 9778 
+                                                    <p><a href="https://api.whatsapp.com/send?phone=85267958894" style="color:black;"><b><i class="fa fa-phone"></i></b>  +(852) 6795 8894</a></p>
+                                                    <p><a href="mailto:info@bespoketailorshk.com" style="color:black;"><b><i class="fa fa-envelope"></i></b> 
+                                                            info@bespoketailorshk.com
+                                                        </a></p>
 
                                                 </div>
                                                 </p>

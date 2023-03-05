@@ -83,10 +83,10 @@ $this->load->view('layout/header');
                                             <input type="text" name='quantity' class="form-control quantity-input" value="{{product.quantity}}"  placeholder="1" readonly="">
                                             <div class="input-group">
                                                 <span class="input-group-btn">
-                                                    <button class="btn btn-default quantity-plus cart_button" type="button" ng-click="updateCart(product, 'add')"><i class="fa fa-plus" aria-hidden="true" ></i></button>
+                                                    <button class="btn btn-primary quantity-plus cart_button padding5-10" type="button" ng-click="updateCart(product, 'add')"><i class="fa fa-plus" aria-hidden="true" ></i></button>
                                                 </span>
                                                 <span class="input-group-btn">
-                                                    <button class="btn btn-default quantity-minus cart_button" type="button" ng-click="updateCart(product, 'sub')"><i class="fa fa-minus" aria-hidden="true" ></i></button>
+                                                    <button class="btn btn-primary quantity-minus cart_button padding5-10" type="button" ng-click="updateCart(product, 'sub')"><i class="fa fa-minus" aria-hidden="true" ></i></button>
                                                 </span>
                                             </div><!-- /input-group -->
                                         </li>
@@ -112,14 +112,14 @@ $this->load->view('layout/header');
                                             <div class="input-group">
                                                 <input type="hidden" name="next_url" value="<?php echo current_url(); ?>"/>
                                                 <input type="text" name='couponcode' class="form-control coupon-input text-left" value=""  placeholder="Enter Coupon Here..." required=""/>
-                                                <button class="btn btn-default quantity-plus" type="submit"  style="    padding: 0px 11px;"><i class="fa fa-check" aria-hidden="true" ></i> Apply Coupon</button>
+                                                <button class="btn btn-primary padding5-10 quantity-plus" type="submit"  style="    "><i class="fa fa-check" aria-hidden="true" ></i> Apply Coupon</button>
 
                                             </div>
                                         </form>
                                         <span ng-if="globleCartData.coupon.has_coupon == '1'">
                                             <div class="col-md-12">
                                                 Applied Coupon Code: <b>{{globleCartData.coupon.coupon_code}}</b> 
-                                                <button class="btn btn-danger removecouponbutton" ng-click="removeCoupon()" style="    padding: 0px 11px;">Remove Coupon</button>
+                                                <button class="btn btn-primary padding5-10 removecouponbutton" ng-click="removeCoupon()" style="   ">Remove Coupon</button>
                                             </div>
                                             <div class="col-md-12">{{globleCartData.coupon.coupon_message}}</div>
                                         </span>

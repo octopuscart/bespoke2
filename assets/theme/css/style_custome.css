@@ -60,7 +60,8 @@ code {
 
 .collar_style {
 
-
+    //background-size: 293%!important;
+    //background-position: -101% -14%!important;
 }
 
 .cuff_style{
@@ -117,7 +118,7 @@ code {
 }
 
 .shirtcontainer{
-    height: 530px;
+       height: 530px;
 }
 
 
@@ -249,20 +250,20 @@ code {
     left: 225px;
     display: block;
     top: 26px;
-    transform: rotate(0deg);
+        transform: rotate(0deg);
 }
 
 .multicustom .monogramtext_posistion_collar {
     left: 223px;
     display: block;
     top: 24px;
-    transform: rotate(0deg);
+        transform: rotate(0deg);
 
 }
 
 
 .monogramtext_posistion_cuff_left {
-    left: 331px;
+       left: 331px;
     display: block;
     top: 304px;
     transform: rotate(42deg)
@@ -280,29 +281,29 @@ code {
     left: 279px;
     display: block;
     top: 139px;
-    transform: rotate(0deg);
+        transform: rotate(0deg);
 }
 .multicustom .monogramtext_posistion_left_pocket {
     left: 277px;
     display: block;
     top: 136px;
-    transform: rotate(0deg);
+        transform: rotate(0deg);
 }
 
 .monogramtext_posistion_abdomen{
     left: 263px;
     display: block;
     top: 285px;
-    transform: rotate(0deg);
+        transform: rotate(0deg);
     /*transform: rotate(43deg);*/
 } 
-
+           
 
 .monogramtext_posistion_shirt_tail{
-    left: 251px;
+        left: 251px;
     display: block;
     top: 431px;
-    transform: rotate(0deg);
+        transform: rotate(0deg);
 }
 
 
@@ -310,16 +311,16 @@ code {
     left: 250px;
     display: block;
     top: 285px;
-    transform: rotate(0deg);
+        transform: rotate(0deg);
     /*transform: rotate(43deg);*/
 } 
-
+           
 
 .multicustom .monogramtext_posistion_shirt_tail{
-    left: 251px;
+        left: 251px;
     display: block;
     top: 431px;
-    transform: rotate(0deg);
+        transform: rotate(0deg);
 }
 
 
@@ -395,7 +396,7 @@ p.fabric_title {
     height: 47px;
     width: 47px;
     background-size: 179px !important;
-    background-position: -25px 69px!important;
+       background-position: -25px 69px!important;
 }
 
 
@@ -455,11 +456,6 @@ p.selected-element-title_text_price{
 }
 
 @media only screen and (max-width: 768px) {
-
-    .customization_items::-webkit-scrollbar {
-        width: 5px!important;
-        background-color: #d89a48;
-    }
 
     .insert_button {
         padding: 3px 3px;
@@ -526,26 +522,12 @@ p.selected-element-title_text_price{
     .monogramtext_posistion {
         color: white;
         padding: 0 2px;
-
+        background: black;
         height: 8px;
         z-index: 200;
         font-size: 6px;
         position: absolute;
         display: block;
-    }
-
-    .multicustom .monogramtext_posistion_abdomen {
-        left: 174px;
-        display: block;
-        top: 200px;
-        transform: rotate(0deg);
-        /* transform: rotate(43deg); */
-    }
-    .multicustom .monogramtext_posistion_shirt_tail {
-        left: 170px;
-        display: block;
-        top: 295px;
-        transform: rotate(0deg);
     }
 
 
@@ -596,7 +578,8 @@ p.selected-element-title_text_price{
         background-position: -111px -29px!important;
     }
     .collar_style {
-
+        // background-size: 293%!important;
+        // background-position: -101% -7%!important;
     }
     .button_style1{
         margin-left: 2px;
@@ -607,33 +590,13 @@ p.selected-element-title_text_price{
         background-position: -209% -45%!important;
     }
     .shirtcontainer{
-        height: 380px!important;
+        height: 380px;
     }
 
     header .logo img {
         z-index: 3;
         height: 47px;
         position: relative;
-    }
-
-    .fabricblock_a {
-        padding: 5px;
-        border-bottom-left-radius: 50%!important;
-        border-top-left-radius: 50%!important;
-        float: left;
-        height: 120px;
-        width: 120px;
-    }
-
-    .multicustom .fixpos {
-        height: auto!important;
-    }
-
-    .multicustom .monogramtext_posistion_cuff_left {
-        left: 222px;
-        display: block;
-        top: 208px;
-        transform: rotate(43deg);
     }
 
 }
@@ -696,19 +659,19 @@ p.selected-element-title_text_price{
 .customization_items::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #d89a48;
+      background-color: #d89a48;
 }
 
 .customization_items::-webkit-scrollbar
 {
     width: 15px;
-    background-color: #d89a48;
+    background-color: red;
 }
 
 .customization_items::-webkit-scrollbar-thumb
 {
     background-color: #000;
-    border: 0px solid #d89a48;
+    border: 0px solid red;
 }
 
 .elementTabList .nav-tabs>li.active>a, .elementTabList .nav-tabs>li.active>a:focus, .elementTabList .nav-tabs>li.active>a:hover {
@@ -757,3 +720,99 @@ p.selected-element-title_text_price{
     height: 480px;
 }
 
+
+
+.monogramtext_posistion{
+    color: white;
+    padding: 0 2px;
+    /*background: black;*/
+    height: 10px;
+    z-index: 200;
+    font-size: 8px;
+    position: absolute;
+    display: none;
+    font-weight: bold;
+}
+
+.monogramtext_posistion_none{
+    display: none;
+}
+
+.monogramtext_posistion_collar {
+       left: 228px;
+    display: flex;
+    position: absolute;
+    top: 26px;
+    transform: rotate(0deg);
+}
+
+.multicustom .monogramtext_posistion_collar {
+    left: 223px;
+    display: block;
+    top: 24px;
+    transform: rotate(0deg);
+
+}
+
+
+.monogramtext_posistion_cuff_left {
+        left: 376px;
+    display: block;
+    top: 360px;
+    transform: rotate(-1deg);
+}
+
+.multicustom .monogramtext_posistion_cuff_left {
+    left: 332px;
+    display: block;
+    top: 306px;
+    transform: rotate(43deg);
+}
+
+
+.monogramtext_posistion_left_pocket {
+   left: 262px;
+    display: block;
+    top: 140px;
+    transform: rotate(0deg);
+}
+.multicustom .monogramtext_posistion_left_pocket {
+    left: 277px;
+    display: block;
+    top: 136px;
+    transform: rotate(0deg);
+}
+
+.monogramtext_posistion_abdomen{
+   left: 251px;
+    display: block;
+    top: 289px;
+    transform: rotate(0deg);
+    /*transform: rotate(43deg);*/
+} 
+
+
+.monogramtext_posistion_shirt_tail{
+ 
+    left: 241px;
+    display: block;
+    top: 428px;
+    transform: rotate(0deg);
+}
+
+
+.multicustom .monogramtext_posistion_abdomen{
+    left: 250px;
+    display: block;
+    top: 285px;
+    transform: rotate(0deg);
+    /*transform: rotate(43deg);*/
+} 
+
+
+.multicustom .monogramtext_posistion_shirt_tail{
+    left: 251px;
+    display: block;
+    top: 431px;
+    transform: rotate(0deg);
+}

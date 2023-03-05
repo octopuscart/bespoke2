@@ -35,7 +35,7 @@ $paymentstatus = "";
         font-size: 19px;
         height: 31px;
         width: 31px;
-        background-color: #b28c06;
+        background-color: #ff1100;
         float: left;
         border-radius: 50%;
         color: #fff;

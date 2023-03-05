@@ -54,9 +54,9 @@ $this->load->view('layout/header');
                 <?php
             }
             ?>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="background: wheat;padding-bottom: 15px;">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="background: #252839;padding-bottom: 15px;color: white;">
                 <div class="login-registration-field">
-                    <h2 class="cart-area-title">Login</h2>
+                    <h2 class="cart-area-title text-white" >Login</h2>
                     <form method="post" action="#">
                         <label>Email address *</label>
                         <input type="email"  class="form-control"name="email" placeholder="Email " required=""/>
@@ -66,15 +66,15 @@ $this->load->view('layout/header');
                         <button class="btn btn-default" name="signIn" type="submit" value="signIn">Login</button>
                         <br/>
                         <hr/>
-                        <p>Forgotten password? <a href="#" ng-click="requestPasswordReset()">Click here</a></p>
+                        <p class="text-white">Forgotten password? <a href="#" class="text-white" style="font-weight: bold" ng-click="requestPasswordReset()">Click here</a></p>
                         <br/>
                     </form>
                 </div>
             </div>
             <div class="col-md-2"></div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="background: wheat;padding-bottom: 15px;">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="background: #252839;padding-bottom: 15px;color: white;">
                 <div class="login-registration-field">
-                    <h2 class="cart-area-title">Register</h2>
+                    <h2 class="cart-area-title text-white">Register</h2>
                     <form action="#" method="post">
                         <div class="row">
                             <div class="col-md-6">

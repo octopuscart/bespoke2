@@ -11,12 +11,51 @@ $this->load->view('layout/header');
 
 <!-- MAP -->
 <section class="map-block">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14767.634173564973!2d114.15643!3d22.281454!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84c22a9b94a9a5ff!2sRoyal+Tailor!5e0!3m2!1sen!2sin!4v1539007340506" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe><div class="goldline2 " style="margin-bottom: 30px;"></div>
+    <div class="google-map-area">
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyA319S-ZyrzBQNhbYmjGedtOfl8wm6tY0Y&v=3.exp'></script><div style='overflow:hidden;height:238px;width:100%;'>
+            <div id='gmap_canvas' style='height:338px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small>
+
+                </small></div><style>#gmap_canvas img{
+                    max-width:none!important;
+                    background:none!important
+                    }</style>
+        </div><script type='text/javascript'>
+            function init_map() {
+                //22.2968045,114.1687551  22.2969039,114.1623853
+                var myOptions = {zoom: 17, center: new google.maps.LatLng(22.297975, 114.17118299999993),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP};
+                map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.297975, 114.17118299999993)});
+
+//                                        marker2 = new google.maps.Marker({map: map, position: new google.maps.LatLng(22.2967832, 114.1709048)});
+
+
+
+                infowindow = new google.maps.InfoWindow({content: '<strong>Bespoke Tailors Showroom</strong><br>2nd Floor, 45 Haiphong Road ,Tsim Sha Tsui, Kowloon , Hong Kong<br>'});
+
+                google.maps.event.addListener(marker, 'click', function () {
+                    infowindow.open(map, marker);
+                });
+                infowindow.open(map, marker);
+
+
+
+//                                        infowindow = new google.maps.InfoWindow({content: '<strong>Bespoke Tailors Shop</strong><br>Shop D, Ground Floor, Hanyee Building, 19-21 Hankow Road , Tsim Sha Tsui, Kowloon , Hong Kong.<br>'});
+//
+//                                        google.maps.event.addListener(marker2, 'click', function () {
+//                                            infowindow.open(map, marker2);
+//                                        });
+//                                        infowindow.open(map, marker2);
+
+            }
+            google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+    </div>
     <div style="clear: both"></div>
 </section>
 <div style="clear: both"></div>
 <!-- Content -->
-<div id="content"> 
+<div id="content" class="margin-top-30" > 
     <!-- Contact Us -->
     <section class="lets-talk pad-t-b-30">
         <div class="container"> 
@@ -29,21 +68,25 @@ $this->load->view('layout/header');
                         <h3 class="text-transform-none letter-space-0">Our Location</h3>
                     </div>
                     <ul class="studio-loc padding-right-100">
-                        <li><b><i class="fa fa-location-arrow"></i></b>Shop 11, 1/F Admiralty Center,<br/>
-18 Harcourt Road, Admiralty, Hong Kong</li>
-                
-               
-                   <li><b><i class="fa fa-location-arrow"></i></b>General Commercial Building,<br/>
-G/F, 162 Des Voeux Road, Central, Hong Kong</li>
-                        <li><i class="flaticon-smartphone"></i> <a href="tel:85226559778" ><b><span class="fa fa-phone"></span></b> +(852) 2655 9778</a> <br>
-                            <a href="tel:85226559768" ><span class="fa fa-fax"></span></b> +(852) 2655 9768</a></li>
-                        <li><i class="flaticon-mail"></i> <a  href="mailto:lyra@royaltailor.hk">lyra@royaltailor.hk</a> <br>
-                            <a  href="mailto:sales@royaltailor.hk">sales@royaltailor.hk</a></li>
+                        <li><b><i class="fa fa-location-arrow"></i></b>
+                            2nd Floor, 45 Haiphong Road ,<br/>
+                            Tsim Sha Tsui, Kowloon,<br/>
+                            Hong Kong
+                        </li>
+
+
+
+
+                        <li><i class="flaticon-smartphone"></i> 
+                            <a href="tel:+(852) 2730 8566" ><b><span class="fa fa-phone"></span></b> +(852) 2730 8566</a> <br>
+                        </li>
+                        <li><i class="flaticon-mail"></i> 
+
+                            <a  href="mailto:info@bespoketailorshk.com">info@bespoketailorshk.com</a></li>
                         <li><i class="fa fa-calendar-o"></i>
                             <h5 style="font-size: 18px">Timing</h5>
-                            <a href="#"><span class="shop_timing">Monday - Friday</span>: 10:00 AM to 08:00 PM</a> <br>
-                            <a href="#"><span class="shop_timing">Saturday</span>: 11:00 AM to 07:00 PM</a> <br>
-                            <a href="#"><span class="shop_timing">Sun & Pub. Holidays</span>: 12:00 PM to 05:00 PM</a> <br>
+                            <a href="#"><span class="shop_timing">Monday - Friday</span>: 09:00 AM to 07:00 PM</a> <br>
+                            <a href="#"><span class="shop_timing">Saturday & Sunday</span>: 09:00 AM to 03:00 PM</a> <br>
 
                     </ul>
 
@@ -53,11 +96,11 @@ G/F, 162 Des Voeux Road, Central, Hong Kong</li>
                     </div>
                     <div class="social-links">
                         <ul>
-                            <li><a href="https://www.facebook.com/royaltailorhk/"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/RoyalTailorHK"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.instagram.com/royal_tailor_/"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://en.tripadvisor.com.hk/Profile/Royaltailor"><i class="fa fa-tripadvisor"></i></a></li>
-                            <li><a href="https://www.pinterest.com/royaltailorhk"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="https://www.facebook.com/pg/bespoketailorshk" target="_blank"><i class="fa fa-facebook"></i></a></li> 
+                            <li><a href="https://twitter.com/bespoketailorhk" target="_blank"><i class="fa fa-twitter"></i></a> </li>
+                            <li><a href="https://www.instagram.com/bespoke_tailors_hong_kong/" target="_blank"><i class="fa fa-instagram"></i></a> </li>
+                            <li><a href="https://www.pinterest.com/jaybespoketailorshk/" target="_blank"><i class="fa fa-pinterest"></i></a> </li>
+                            <li><a href="https://www.youtube.com/channel/UCsvOrhYlTO4HTraZbHuIUdg?view_as=subscriber" target="_blank"><i class="fa fa-youtube"></i></a></li> 
                         </ul>
                     </div>
                 </div>

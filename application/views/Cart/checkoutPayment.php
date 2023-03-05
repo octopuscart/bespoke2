@@ -214,46 +214,8 @@ $this->load->view('layout/header');
                                                     <div class="tab-pane fade <?php echo DEFAULT_PAYMENT_MODE == 'Bank Transfer' ? 'active in' : ''; ?>" id="bank">
                                                         <p>
 
-                                                        <div class="row">
-                                                            <div class="col-md-2"></div>
-                                                            <div class="col-md-3">
-                                                                <div class="hideonmobile" style="    margin-top: 50px;"></div>
-                                                                <img src="<?php echo base_url(); ?>assets/paymentstatus/bank.png" >
-                                                            </div>
-                                                            <div class="col-md-7">
-                                                                <table class="bankdetails">
-                                                                    <tr>
-                                                                        <th style="width: 120px;">Company Name</th>
-                                                                        <td>Royal Trading</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Bank Name</th>
-                                                                        <td>Bank Of China</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>A/c No.</th>
-                                                                        <td>012 721 00092404</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Bank Code</th>
-                                                                        <td>012</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Branch Code</th>
-                                                                        <td>721</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Swift Code</th>
-                                                                        <td>BKCHHKHH</td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>Address</th>
-                                                                        <td>1 Garden Road, Hong Kong</td>
-                                                                    </tr>
-                                                                </table>
-                                                               
-                                                            </div>
-                                                        </div>
+                                                          <img src="<?php echo base_url(); ?>assets/paymentstatus/bank.png" />
+                                                        
                                                         </p>
                                                         <div class="cart-page-top table-responsive">
                                                             <table class="table table-hover">

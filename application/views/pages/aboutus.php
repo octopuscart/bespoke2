@@ -2,105 +2,64 @@
 $this->load->view('layout/header');
 ?>
 
-
-<!-- MAP -->
-
-
-<div id="content"> 
-
-    <!-- SERVICES -->
-    <section class="what-we pad-t-b-30">
+<section class="sub-bnr" data-stellar-background-ratio="0.5">
+    <div class="position-center-center">
         <div class="container">
+            <h4>About Us</h4>
 
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+                <li><a href="<?php echo site_url("/"); ?>">Home</a></li>
+                <li><a href="<?php echo site_url("Shop/aboutus"); ?>">About us</a></li>
+            </ol>
+        </div>
+    </div>
+</section>
+<!-- MAP -->
+<div class="section_offset margin-20" >
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="single-blog-details-content">
+        <!--                   <img class="img-responsive" src="<?php echo base_url() . 'assets/images/logo73.png'; ?>" alt="logo" style="  margin: 0px auto 34px;
+        background: black;
+        height: 53px;">-->
 
-
-            <div class="row"> 
-                <div class="col-md-12">
-                    <div class="heading-block ">
-                        <div class="intro-small1 col-md-8 center-auto">
-                            <img class="img-responsive" src="<?php echo base_url(); ?>assets/images/sidelogo.jpg" alt="" style="height: 200px">
-                        </div>
-                    
-                 
                         <p>
-                            We are tailoring artists. Understand our guests; we are committed to build authentic attire for every lady and gentleman.
+                            As one of Hong Kong's leading custom tailors, we are proud of our international reputation for making the highest quality tailored clothing. Since past three decades, we are known across the globe for professionally hand-crafted suits, shirts, leather jackets, sports jackets and ladies dresses from Hong Kong.
                         </p>
-                    </div>
-                </div>
-                <!-- Images -->
-                <div class="col-md-6">
-                    <div class="nolist-style imgres">
-                        <ul class="row">
-                            <li class="col-xs-12 pad-t-b-30"> <img class="img-responsive" src="<?php echo base_url(); ?>assets/theme/images/shopmain.JPG" alt=""> </li>
-                       </ul>
-                    </div>
-                </div>
 
-                <!-- Text sec -->
-                <div class="col-md-6 margin-top-30"> 
+                        <p>
+                            Our master tailors work with a group of over 250 professionally trained Shanghainese tailors to deliver each garment to utter satisfaction of clients. Our garments are hand-cut and hand-stitched to ensure the best quality outcome.                           
+                        </p>
 
-                    <!-- Heading -->
-                    <div class="heading-block ">
+                        <p>
+                            Our overseas sales team travels across the globe with wide range of fabrics and styles to provide door-to-door services, office tours, or hotel exhibitions as per clients' requests.                    </p>
 
-                        <h3>what we do</h3>
-                 
-                        <p class="pad-t-b-30" style="text-align: center;padding: 20px;font-size: 15px;">We always listen to the expressed and unexpressed wish of our guests. We have over 6000 fabric choices to attire different style and need. <br/>We tailor-made every lining color and detail for each unique and personalized character.<br/>
-                        	
-                            We will offer you with world-famous brands and 6000 kinds of different fabrics. If you want know more, please visit our facebook <a href="https://www.facebook.com/royaltailorhk" target="_blank">https://www.facebook.com/royaltailorhk</a></p>
+
                     </div>
 
-              
+
                 </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <video autoplay loop muted poster="screenshot.jpg" id="">
+                        <source src="<?php echo base_url(); ?>assets/sliders/bespokeshop.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="single-blog-details-content">
+
+
+
+
+                <p>
+                    We stock over 20,000 fabrics in our showroom in Hong Kong. Our fabrics include brands like Ermenegildo Zegna, Loro Piana, Vitale Barberis Canonico, Dormeuil, Hugo Collections and many other prestigious fabrics from Italy, United Kingdom and France.                    </p>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2shk!4v1456977617142!6m8!1m7!1sXFluMOhNrAAAAAQvOkheoQ!2m2!1d22.28139521767876!2d114.1563935905979!3f1.619097136258755!4f-1.326284744175581!5f0.7820865974627469" style="border:0" width="100%"></iframe>
-    
-    
-<!--     OUR SERVICES 
-    <section class="our-main-ser pad-t-b-130">
-        <div class="container"> 
-
-             Heading 
-            <div class="heading-block">
-                <h4>our services</h4>
-                <hr>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-            </div>
-
-             OUR SERVICES LIST 
-            <div class="nolist-style">
-                <ul class="row">
-
-                     OUR SERVICES LIST 
-                    <li class="col-sm-3"> <i class="icon-tools animate fadeInDown" data-wow-delay="0.4s"></i>
-                        <h6>Creative Design</h6>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been indust.</p>
-                    </li>
-
-                     Unlimited Features 
-                    <li class="col-sm-3"> <i class="icon-layers animate fadeInDown" data-wow-delay="0.6s"></i>
-                        <h6>Unlimited Features</h6>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been indust.</p>
-                    </li>
-
-                     Ultra Responsive 
-                    <li class="col-sm-3"> <i class="icon-lightbulb animate fadeInDown" data-wow-delay="0.4s"></i>
-                        <h6>Ultra Responsive</h6>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been indust.</p>
-                    </li>
-
-                     Discuss Idea 
-                    <li class="col-sm-3"> <i class="icon-strategy animate fadeInDown" data-wow-delay="0.6s"></i>
-                        <h6>Discuss Idea</h6>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been indust.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>-->
-
-    <?php
-    $this->load->view('layout/footer');
-    ?>
+<?php
+$this->load->view('layout/footer');
+?>

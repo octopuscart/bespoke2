@@ -38,8 +38,6 @@
         <script src="<?php echo base_url(); ?>assets/theme/sweetalert2/sweetalert2.min.js"></script>
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/theme/sweetalert2/sweetalert2.min.css">
 
-        <script src="<?php echo base_url(); ?>assets/theme/js/vendors/jquery/jquery.min.js"></script> 
-
 
         <!--angular js-->
         <script src="<?php echo base_url(); ?>assets/theme/angular/angular.min.js"></script>
@@ -54,21 +52,32 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <![endif]-->
-        
+    </head>
+    <body ng-app="App">
+
+        <!--LOADER--> 
+        <div id="loader1">
+            <div class="position-center-center">
+                <!--<img src="<?php echo base_url(); ?>assets/theme/images/crown.gif"  style="    height: 50px;">-->
+                <!--<div class="loader"></div>-->
+            </div>
+        </div>
+
+
+
         <script>
 
 
             var App = angular.module('App', []).config(function ($interpolateProvider, $httpProvider) {
-                //$interpolateProvider.startSymbol('{$');
-                //$interpolateProvider.endSymbol('$}');
-                $httpProvider.defaults.headers.common = {};
-                $httpProvider.defaults.headers.post = {};
+            //$interpolateProvider.startSymbol('{$');
+            //$interpolateProvider.endSymbol('$}');
+            $httpProvider.defaults.headers.common = {};
+            $httpProvider.defaults.headers.post = {};
             });
-            var baseurl = "<?php echo base_url(); ?>index.php/";
-            var adminurl = "<?php echo ADMINURL; ?>index.php/";
+             var adminurl = "<?php echo ADMINURL; ?>index.php/";
+            var baseurl = "<?php echo site_url(); ?>";
             var imageurlg = "<?php echo imageserver; ?>";
             var globlecurrency = "<?php echo globle_currency; ?>";
-
             var avaiblecredits = 0;</script>
 
         <style>
@@ -80,67 +89,52 @@
                 line-height: 25px;
             }
 
-            .linkheader .social-links a {
-                border: 1px solid;
-                padding: 0px;
-                margin-left: 10px;
-                float: left;
-                width: 25px;
-                text-align: center;
-                color: white;
+            .social_header a {
+                padding: 10px;
             }
 
         </style>
-    </head>
-    <body ng-app="App"  ng-controller="ShopController">
-
-        <!--LOADER--> 
-        <div id="loader">
-            <div class="position-center-center">
-                <img src="<?php echo base_url(); ?>assets/theme/images/crown.gif"  style="    height: 50px;">
-                <!--<div class="loader"></div>-->
-            </div>
-        </div>
-
-
-
+    
 
 
         <!-- Page Wrapper -->
-        <div id="wrap" class="shop-page"> 
+        <div id="wrap" class="shop-page" ng-controller="ShopController"> 
             <!-- Rights -->
-            <div class="rights  linkheader hideonmobile " style="    padding: 0;    background: #161409;">
+            <div class="rights  linkheader hideonmobile " style="    padding: 0;    background: #252839;">
                 <div class="container ">
                     <div class="row">
                         <div class="col-sm-6 " >
-                            <p style="color:white"><i class="fa fa-phone"></i><a href="tel:85226559778" style="color:white"> +(852) 2655 9778</a>&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-envelope"></i></b><a href="mailto:lyra@royaltailor.hk"  style="color:white">lyra@royaltailor.hk</a></p>
+                            <p style="color:white;    font-size: 13px;margin-top: 0px;"><a  href="tel:85267958894" style="color:white;"><i class="fa fa-phone"></i> +(852) 6795 8894</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:info@bespoketailorshk.com" style="color:white;"><i class="fa fa-envelope"></i></b> info@bespoketailorshk.com</a></p>
                         </div>
                         <div class="col-sm-6 text-right" >                 
-                            <div class="social-links" style="    float: right;
+                            <div class="social-links social_header" style="    float: right;
                                  margin-top: 4px;"> 
-                                <a href="https://www.facebook.com/royaltailorhk/" target="_blank"><i class="fa fa-facebook"></i></a> 
-                                <a href="https://twitter.com/RoyalTailorHK" target="_blank"><i class="fa fa-twitter"></i></a> 
-                                <a href="https://www.instagram.com/royal_tailor_/" target="_blank"><i class="fa fa-instagram"></i></a> 
-                                <a href="https://en.tripadvisor.com.hk/Profile/Royaltailor" target="_blank"><i class="fa fa-tripadvisor"></i></a> 
-                                <a href="https://www.pinterest.com/royaltailorhk" target="_blank"><i class="fa fa-pinterest"></i></a> 
+                                <a href="https://www.facebook.com/pg/bespoketailorshk"" target="_blank"><i class="fa fa-facebook"  style="color:white;"></i></a> 
+                                <a href="https://twitter.com/bespoketailorhk" target="_blank"><i class="fa fa-twitter"  style="color:white;"></i></a> 
+                                <a href="https://www.instagram.com/bespoke_tailors_hong_kong/" target="_blank"><i class="fa fa-instagram"  style="color:white;"></i></a> 
+                                <a href="https://www.pinterest.com/jaybespoketailorshk/" target="_blank"><i class="fa fa-pinterest"  style="color:white;"></i></a> 
+                                <a href="https://www.youtube.com/channel/UCsvOrhYlTO4HTraZbHuIUdg?view_as=subscriber" target="_blank"><i class="fa fa-youtube"  style="color:white;"></i></a> 
+
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Footer -->  
-            <!-- Header -->
-            <header class="header ">
-                <div class="sticky ">
-                    <div class="container">
-                        <div class="logo">
-                            <a href="<?php echo site_url("/"); ?>" style="font-size: 31px;">
-                                <img src="<?php echo base_url() . 'assets/images/logo73_2.png'; ?>" class="logomain">                          
-                            </a> 
-                        </div>
+            <div id="wrap" class="shop-page" ng-controller="ShopController"> 
 
-                        <!-- Nav -->
-                        <nav class="navbar ownmenu">
+                <!-- Header -->
+                <header class="header ">
+                    <div class="sticky " style="    background: #000;">
+                        <div class="container">
+                            <div class="logo">
+                                <a href="<?php echo site_url("/"); ?>" style="font-size: 31px;">
+                                    <img src="<?php echo base_url() . 'assets/images/logo73.png'; ?>" class="logomain">                          
+                                </a> 
+                            </div>
+
+                            <!-- Nav -->
+                      <nav class="navbar ownmenu">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span><i class="fa fa-navicon"></i></span> </button>
                             </div>
@@ -268,8 +262,7 @@
 
 
                         </nav>
+                        </div>
                     </div>
-                </div>
-                <div class="goldline padding-bottom-30"></div>
-            </header>
-            <!-- End Header --> 
+                </header>
+                <!-- End Header --> 

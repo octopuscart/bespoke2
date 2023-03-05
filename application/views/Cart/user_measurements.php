@@ -150,10 +150,6 @@ hr {
 <script src="<?php echo base_url(); ?>assets/theme/noslider/nouislider.min.js" type="text/javascript"></script>
 
 
-<!-- start page header -->
-<div class="page-header bg-image" style="height: 50px;">
-
-</div>
 <div id="page" ng-controller="measurementController">
 
     <div role="main" class="main measurement">
