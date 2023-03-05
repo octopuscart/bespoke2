@@ -318,7 +318,7 @@ $image2 = "";
                         <div class="row products-container content" ng-if="productProcess.state == 2">
                             <!-- Item -->
                             <div class="col-sm-4 animated zoomIn"  ng-repeat="(k, product) in productResults.products">
-                                <article class="shop-artical2"> 
+                                <article class="shop-artical"> 
                                     <?php
                                     switch ($custom_id) {
                                         case "1":
