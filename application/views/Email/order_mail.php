@@ -87,7 +87,7 @@
                     <td >
                         <center><img src="<?php echo site_mail_logo; ?> " style="margin: 10px;
                                      height: 50px;padding: 10px;
-                                     border-radius: 50%;
+                                   
                                      width: auto;"/><br/>
                             <h4 style="color: white;"> Order No.: <?php echo $order_data->order_no; ?></h4>
                         </center>
