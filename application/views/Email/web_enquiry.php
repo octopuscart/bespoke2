@@ -98,7 +98,7 @@
                             </tr>
                             <tr>
                                 <th>Contact No.</th>
-                                <td><<?php echo $web_enquiry['contact']; ?></td>
+                                <td><?php echo $web_enquiry['contact']; ?></td>
                             </tr>
                               <tr>
                                 <th>Message</th>
