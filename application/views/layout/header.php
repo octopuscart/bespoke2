@@ -104,7 +104,7 @@
                 <div class="container ">
                     <div class="row">
                         <div class="col-sm-6 " >
-                            <p style="color:white;    font-size: 13px;margin-top: 0px;"><a  href="tel:85267958894" style="color:white;"><i class="fa fa-phone"></i> +(852) 6795 8894</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:info@bespoketailorshk.com" style="color:white;"><i class="fa fa-envelope"></i></b> info@bespoketailorshk.com</a></p>
+                            <p style="color:white;    font-size: 13px;margin-top: 0px;"><a  href="tel:85267958894" style="color:white;"><i class="fa fa-phone"></i> +(852) 6795 8894</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:info@bespoketailors.hk" style="color:white;"><i class="fa fa-envelope"></i></b> info@bespoketailors.hk</a></p>
                         </div>
                         <div class="col-sm-6 text-right" >                 
                             <div class="social-links social_header" style="    float: right;

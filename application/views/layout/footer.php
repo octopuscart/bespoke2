@@ -45,8 +45,8 @@ Subscribe to our newsletter and get exclusive deals you wont find anywhere else 
                     Hong Kong
                 </p>
                 <p><a href="https://api.whatsapp.com/send?phone=85267958894" style="color:white;"><b><i class="fa fa-phone"></i></b>  +(852) 6795 8894</a></p>
-                <p><a href="mailto:info@bespoketailorshk.com" style="color:white;"><b><i class="fa fa-envelope"></i></b> 
-                        info@bespoketailorshk.com
+                <p><a href="mailto:info@bespoketailors.hk" style="color:white;"><b><i class="fa fa-envelope"></i></b> 
+                        info@bespoketailors.hk
                     </a></p>
 
 

@@ -82,7 +82,7 @@ $this->load->view('layout/header');
                         </li>
                         <li><i class="flaticon-mail"></i> 
 
-                            <a  href="mailto:info@bespoketailorshk.com">info@bespoketailorshk.com</a></li>
+                            <a  href="mailto:info@bespoketailors.hk">info@bespoketailors.hk</a></li>
                         <li><i class="fa fa-calendar-o"></i>
                             <h5 style="font-size: 18px">Timing</h5>
                             <a href="#"><span class="shop_timing">Monday - Friday</span>: 09:00 AM to 07:00 PM</a> <br>
