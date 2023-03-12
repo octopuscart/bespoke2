@@ -142,13 +142,15 @@ class Shop extends CI_Controller {
         "type" => "local",
         "id" => "au0_app",
         "country" => "Hong Kong",
-        "city_state" => "Central",
+        "city_state" => "Tsim Sha Tsui",
         "hotel" => "SHOWROOM",
-        "address" => "Shop 11, 1/F Admiralty Center,18 Harcourt Road, Admiralty, Hong Kong",
+        "address" => "2nd Floor, 45 Haiphong Road ,
+Tsim Sha Tsui, Kowloon,
+Hong Kong",
         "days" => "",
         "start_date" => "",
         "end_date" => "",
-        "contact_no" => " +(852) 2655 9778",
+        "contact_no" => " +(852) 2730 8566",
         "dates" => $next7Days
             ),];
 
