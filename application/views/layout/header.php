@@ -124,7 +124,7 @@
             <div id="wrap" class="shop-page" ng-controller="ShopController"> 
 
                 <!-- Header -->
-                <header class="header ">
+                <header class="header " style="    z-index: 1000;">
                     <div class="sticky " style="    background: #000;">
                         <div class="container">
                             <div class="logo">
