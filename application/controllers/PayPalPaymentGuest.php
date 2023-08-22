@@ -9,14 +9,21 @@ class PayPalPaymentGuest extends CI_Controller {
         $this->load->model('Product_model');
         $this->load->library('session');
         $this->load->model('User_model');
+        $session_user = $this->session->userdata('logged_in');
+        if ($session_user) {
+            $this->user_id = $session_user['login_id'];
+        } else {
+            $this->user_id = 0;
+        }
+
         $this->checklogin = $this->session->userdata('logged_in');
-        $this->user_id = $this->session->userdata('logged_in')['login_id'];
+        $this->user_id = $this->checklogin ? $this->checklogin['login_id'] : 0;
         $query = $this->db->get('configuration_site');
         $siteconfiguration = $query->row();
-        
     }
 
     public function process() {
+        $paymentmathod = "PayPal";
         $PayPalMode = ''; // sandbox or live
         $PayPalApiUsername = paypal_api_username; //PayPal API Username
         $PayPalApiPassword = paypal_api_password; //Paypal API password
@@ -34,6 +41,8 @@ class PayPalPaymentGuest extends CI_Controller {
         $paypaldata = "";
         $products = $session_cart['products'];
         $total_amt = $session_cart['total_price'];
+        $total_amt = $session_cart['total_price'];
+        $sub_total_price = $session_cart['sub_total_price'];
         $countitem = 0;
         foreach ($products as $keyp => $valuep) {
             $ItemNumber = $valuep['sku'];
@@ -53,26 +62,32 @@ class PayPalPaymentGuest extends CI_Controller {
 //        $total_amt = $total_amt - $discountcalculate;
 //        $total_amt = number_format($total_amt, 2, '.', '');
 //
-//        $paypaldata .= '&L_PAYMENTREQUEST_0_NAME' . $countitem . '=' . urlencode("GIFT DISCOUNT") .
-//                '&L_PAYMENTREQUEST_0_NUMBER' . $countitem . '=' . urlencode("GFT0001") .
-//                '&L_PAYMENTREQUEST_0_AMT' . $countitem . '=-' . urlencode($discountcalculate) .
-//                '&L_PAYMENTREQUEST_0_QTY' . $countitem . '=' . urlencode(1);
+        $session_coupon = $this->session->userdata('session_coupon');
+        if (isset($session_coupon["has_coupon"]) && $session_coupon["has_coupon"]) {
+            
+            $sub_total_price = $sub_total_price - $session_cart["discount"];
+            $sub_total_price = round($sub_total_price, 2);
+            $paypaldata .= '&L_PAYMENTREQUEST_0_NAME' . $countitem . '=' . urlencode($session_cart["coupon"]) .
+                    '&L_PAYMENTREQUEST_0_NUMBER' . $countitem . '=' . urlencode($session_cart["coupon_code"]) .
+                    '&L_PAYMENTREQUEST_0_AMT' . $countitem . '=-' . urlencode($session_cart["discount"]) .
+                    '&L_PAYMENTREQUEST_0_QTY' . $countitem . '=' . urlencode(1);
+        }
 
         $setexpresscheckout = '&METHOD=SetExpressCheckout' .
                 '&PAYMENTREQUEST_0_PAYMENTACTION=' . urlencode("SALE") .
                 '&RETURNURL=' . urlencode($PayPalReturnURL) .
                 '&CANCELURL=' . urlencode($PayPalCancelURL);
-
-        $paypaldata.= '&NOSHIPPING=0' . '&PAYMENTREQUEST_0_ITEMAMT=' . urlencode($total_amt) .
+        $isShipping = $session_cart["shipping_price"] ? 1 : 0;
+        $paypaldata .= '&NOSHIPPING=' . $isShipping . '&PAYMENTREQUEST_0_ITEMAMT=' . urlencode($sub_total_price) .
                 '&PAYMENTREQUEST_0_TAXAMT=' . urlencode('0') .
-                '&PAYMENTREQUEST_0_SHIPPINGAMT=' . urlencode('0') .
+                '&PAYMENTREQUEST_0_SHIPPINGAMT=' . urlencode($session_cart["shipping_price"]) .
                 '&PAYMENTREQUEST_0_HANDLINGAMT=' . urlencode('0') .
                 '&PAYMENTREQUEST_0_SHIPDISCAMT=' . urlencode('0') .
                 '&PAYMENTREQUEST_0_INSURANCEAMT=' . urlencode('0') .
                 '&PAYMENTREQUEST_0_AMT=' . urlencode($total_amt) .
                 '&PAYMENTREQUEST_0_CURRENCYCODE=' . urlencode('USD') .
                 '&LOCALECODE=GB' . //PayPal pages to match the language on your website.
-                '&LOGOIMG=http://bespoketailorshk.costcointernational.com/assets/images/logo73.png' . //site logo
+                '&LOGOIMG=' . site_mail_logo . //site logo
                 '&CARTBORDERCOLOR=000000' . //border color of cart
                 '&ALLOWNOTE=1';
 //        $this->load->view('home', $data);
@@ -95,10 +110,16 @@ class PayPalPaymentGuest extends CI_Controller {
             $data["error"] = '<div style="color:red"><b>Error : </b>' . urldecode($httpParsedResponseAr["L_LONGMESSAGE0"]) . '</div>';
             $this->load->view('paypal/error', $data);
         }
-       // $this->load->view('paypal/process', $data);
+        // $this->load->view('paypal/process', $data);
     }
 
     public function success() {
+        $paymentmathod = "PayPal";
+        if ($this->checklogin) {
+            $session_cart = $this->Product_model->cartData($this->user_id);
+        } else {
+            $session_cart = $this->Product_model->cartData();
+        }
         $PayPalMode = ''; // sandbox or live
         $PayPalApiUsername = paypal_api_username; //PayPal API Username
         $PayPalApiPassword = paypal_api_password; //Paypal API password
@@ -151,7 +172,6 @@ class PayPalPaymentGuest extends CI_Controller {
                     $measurement_style = $this->session->userdata('measurement_style');
                     $data['measurement_style_type'] = $measurement_style ? $measurement_style['measurement_style'] : "Please Select Size";
 
-
                     if ($this->checklogin) {
                         $session_cart = $this->Product_model->cartData($this->user_id);
                     } else {
@@ -167,12 +187,11 @@ class PayPalPaymentGuest extends CI_Controller {
                     $user_details = $this->session->userdata('customer_inforamtion');
                     $data['user_details'] = $user_details ? $this->session->userdata('customer_inforamtion') : array();
 
-
-
-
                     //place order
 
                     $address = $user_address_details;
+                    $sub_total_price = $session_cart['total_price'];
+                    $total_quantity = $session_cart['total_quantity'];
 
                     $order_array = array(
                         'name' => $user_details['name'],
@@ -187,26 +206,27 @@ class PayPalPaymentGuest extends CI_Controller {
                         'country' => $address['country'],
                         'order_date' => date('Y-m-d'),
                         'order_time' => date('H:i:s'),
-                        'amount_in_word' => $this->Product_model->convert_num_word(urldecode($httpParsedResponseAr["AMT"])),
-                        'sub_total_price' => urldecode($httpParsedResponseAr["AMT"]), //;$this->input->post('sub_total_price'),
-                        'total_price' => urldecode($httpParsedResponseAr["AMT"]),
-                        'total_quantity' => $session_cart['total_quantity'],
-                        'status' => 'Payment Completed',
-                        'payment_mode' => 'PayPal',
+                        'amount_in_word' => $this->Product_model->convert_num_word($sub_total_price),
+                        'sub_total_price' => $session_cart['sub_total_price'],
+                        'total_price' => $session_cart['total_price'],
+                        'coupon_code' => $session_cart['coupon_code'],
+                        'discount' => $session_cart['discount'],
+                        'shipping' => $session_cart['shipping_price'],
+                        'total_quantity' => $total_quantity,
+                        'status' => 'Order Confirmed',
+                        'payment_mode' => "PayPal",
                         'measurement_style' => $measurement_style['measurement_style'],
                         'credit_price' => $this->input->post('credit_price') || 0,
                     );
 
                     $this->db->insert('user_order', $order_array);
                     $last_id = $this->db->insert_id();
-                    $orderno = "OCT" . date('Y/m/d') . "/" . $last_id;
+                    $orderno = "RF" . date('Y/m/d') . "/" . $last_id;
                     $orderkey = md5($orderno);
                     $this->db->set('order_no', $orderno);
                     $this->db->set('order_key', $orderkey);
                     $this->db->where('id', $last_id);
                     $this->db->update('user_order');
-
-
 
                     $this->Product_model->cartOperationCustomCopyOrder($last_id);
 
@@ -216,40 +236,35 @@ class PayPalPaymentGuest extends CI_Controller {
                     $custome_items_nameslist = $session_cart['custome_items_name'];
                     $custome_items_names = implode(", ", $custome_items_nameslist);
 
-                    $measurement_style_array = $measurement_style['measurement_dict'];
-
-                    $custome_items = $session_cart['custome_items'];
-                    $custome_items_ids = implode(", ", $custome_items);
-                    $custome_items_ids_profile = implode("", $custome_items);
-                    $custome_items_nameslist = $session_cart['custome_items_name'];
-                    $custome_items_names = implode(", ", $custome_items_nameslist);
-
-                    $measurement_style_array = $measurement_style['measurement_dict'];
-
-                    if (count($measurement_style_array)) {
-                        $display_index = 1;
-                        foreach ($measurement_style_array as $key => $value) {
-                            $custom_array = array(
-                                'measurement_key' => $key,
-                                'measurement_value' => $value,
-                                'display_index' => $display_index,
-                                'order_id' => $last_id,
-                                'custom_measurement_profile' => 'guest'
-                            );
-                            $this->db->insert('custom_measurement', $custom_array);
-                            $display_index++;
-                        }
+                    if (isset($measurement_style["measurement_id"])) {
+                        $this->db->set('measurement_id', $measurement_style["measurement_id"]);
+                        $this->db->where('id', $last_id);
+                        $this->db->update('user_order');
                     }
 
 
+                    $order_status_data = array(
+                        'c_date' => date('Y-m-d'),
+                        'c_time' => date('H:i:s'),
+                        'order_id' => $last_id,
+                        'status' => "Order Confirmed",
+                        'user_id' => 'guest',
+                        'remark' => "Order Confirmed By Using " . $paymentmathod . ",  Waiting For Payment",
+                    );
+                    $this->db->insert('user_order_status', $order_status_data);
 
+                    $newdata = array(
+                        'username' => '',
+                        'password' => '',
+                        'logged_in' => FALSE,
+                    );
 
                     $array_payment = array(
                         'c_date' => date('Y-m-d'),
                         'c_time' => date('H:i:s'),
                         'order_id' => $last_id,
                         'status' => $payment_status . " Using PayPal",
-                        'user_id' => 'guest',
+                        'user_id' => $this->user_id,
                         'remark' => "Order Confirmed, Payment Made Using PayPay.",
                         "txn_no" => urldecode($httpParsedResponseAr["TRANSACTIONID"]),
                         "message" => $message,
@@ -269,25 +284,9 @@ class PayPalPaymentGuest extends CI_Controller {
                         "checkoutstatus" => urldecode($httpParsedResponseAr["CHECKOUTSTATUS"]),
                     );
                     $this->db->insert('paypal_status', $array_payment);
-
-                    $order_status_data = array(
-                        'c_date' => date('Y-m-d'),
-                        'c_time' => date('H:i:s'),
-                        'order_id' => $last_id,
-                        'status' => "Order Confirmed",
-                        'user_id' => 'guest',
-                        'remark' => "Order Confirmed, Payment Made Using PayPay.",);
-                    $this->db->insert('user_order_status', $order_status_data);
-
-                    $newdata = array(
-                        'username' => '',
-                        'password' => '',
-                        'logged_in' => FALSE,
-                    );
-
                     $this->session->unset_userdata($newdata);
+                    $this->session->unset_userdata("session_coupon");
                     $this->session->sess_destroy();
-
                     redirect('Order/orderdetailsguest/' . $orderkey);
 
                     $this->load->view('Cart/checkoutPayment', $data);
